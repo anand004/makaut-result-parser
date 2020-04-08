@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /result-page/
+Disallow: /view-result/
+Disallow: /class-result/
+Disallow: /admin/

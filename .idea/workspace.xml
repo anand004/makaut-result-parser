@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f52cc423-5544-4dc8-b328-81a0eda4ca80" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZZiTlwgbfkFXJYb7yoGRttE8mV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f52cc423-5544-4dc8-b328-81a0eda4ca80" name="Default Changelist" comment="" />
+      <created>1585053026212</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585053026212</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="192" y="70" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585053669439">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="192" y="70" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.811@0.23.1440.811" timestamp="1585053669439" />
+    <state x="516" y="170" key="FileChooserDialogImpl" timestamp="1585054320305">
+      <screen x="0" y="23" width="1440" height="811" />
+    </state>
+    <state x="516" y="170" key="FileChooserDialogImpl/0.23.1440.811@0.23.1440.811" timestamp="1585054320305" />
+    <state x="211" y="0" key="SettingsEditor" timestamp="1585054568883">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="211" y="0" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585054568883" />
+    <state x="211" y="23" key="SettingsEditor/0.23.1440.811@0.23.1440.811" timestamp="1585054530978" />
+    <state x="47" y="0" width="1075" height="614" key="dock-window-1" timestamp="1585565720650">
+      <screen x="0" y="23" width="1440" height="812" />
+    </state>
+    <state x="47" y="0" width="1075" height="614" key="dock-window-1/0.23.1440.812@0.23.1440.812" timestamp="1585565720650" />
+    <state x="329" y="37" width="782" height="825" key="find.popup" timestamp="1585842227136">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="329" y="37" width="782" height="825" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1585842227136" />
+  </component>
+</project>

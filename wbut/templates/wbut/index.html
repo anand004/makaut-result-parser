@@ -1,0 +1,52 @@
+{% extends 'wbut/base.html' %}
+    {% block extra_head_tags %}
+    <title>Makaut Result | Wbut Result</title>
+    <meta property="og:title" content="Makaut Result | Wbut Result | Class Rank" />
+    <meta property="og:url" content="https://makautresult.in" />
+    <meta property="og:type" content="Makaut Result" />
+    <meta property="og:description" content="Makaut Result, Wbut Result, Makaut Results by class, Check Your Class Rank" />
+    <meta name="description" content="Check MAKAUT result for all the semester. Check your class rank list, Previous semester and Revaluation results here." />
+    <meta name="keywords" content="makaut result, makaut class rank, class rank list, wbut result, makaut previous semester results, makaut revaluation results,  makaut rank, makaut result odd sem, wbut result 2020, previous, makaut exam results, makautresult.in" />
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-sm-block col-sm-6 image-container">
+            <img class="images" alt="Responsive image" src="/static/images/image.png"/>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-container">
+
+                <h3>MAKAUT RESULT</h3>
+                <p class="mb-10">Use your Roll Number to check your result.</p>
+                <form class="result-form" action="{% url 'wbut:resultPage' %}" method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="usn" aria-describedby="emailHelp"
+                               placeholder="Enter Roll Number">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="sem">
+                            <option selected disabled>Choose Your Semester</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,153 @@
+{% extends 'wbut/base.html' %}
+{% block extra_head_tags %}
+    <title>Result Page</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-3 font-weight-bold">NAME</div>
+		<div class="col-9">:&nbsp;&nbsp;{{ details.name }}</div>
+	</div>
+	<div class="row">
+		<div class="col-3 font-weight-bold">Roll No</div>
+		<div class="col-9">:&nbsp;&nbsp;{{ details.roll_no }}</div>
+	</div>
+	<div class="row">
+			<div class="col-3 font-weight-bold">College</div>
+		<div class="col-9">:&nbsp;&nbsp;{{ details.college }}</div>
+	</div>
+	<br/>
+
+	<div class="d-none d-sm-block">
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<tr class="bg-dark">
+					<th colspan="6" style="color:white;">Result
+					</td>
+				</tr>
+				<tr style="background: lightgray;">
+					<td colspan="2" style="color:white; background: blue;">Semester : {{ overview.semester }}</td>
+					<td colspan="2" style="color:white; background: red;">SGPA : {{ overview.cgpa }}</td>
+					{% ifnotequal overview.status ' ' %}
+					<td colspan="2" style="color:white; background: green;">Result : {{ overview.status }}</td>
+					{% endifnotequal %}
+
+				</tr>
+				<tr>
+					<td>Subject Code</td>
+					<td>Subject Name</td>
+					<td>Letter Grade</td>
+					<td>Points</td>
+					<td>Credit</td>
+					<td>Credit Points</td>
+				</tr>
+				{% for result in results %}
+				<tr>
+					<td>{{ result.subject_code }}</td>
+					<td>{{ result.subject_name }}</td>
+					<td>{{ result.letter_grade }}</td>
+					<td>{{ result.points }}</td>
+					<td>{{ result.credit }}</td>
+					<td>{{ result.credit_points }}</td>
+				</tr>
+				{% endfor %}
+				<tr style="background: lightgray;">
+					<td colspan="4">Total : {{ total_credit_points }}</td>
+					<td colspan="2">Credits : {{ total_credits }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="d-block d-sm-none">
+		<div class="row mb-2 bg-dark text-center" style="height:40px; justify-content: center;align-content: center;color: white;">
+			<div class="col">
+				SEMESTER : &nbsp;{{ overview.semester }}
+			</div>
+		</div>
+		<div class="row mb-2 bg-success text-center" style="height:40px; justify-content: center;align-content: center;color: white;">
+
+			<div class="col" style="border-right:1px solid white;">
+				CGPA : &nbsp;{{ overview.cgpa }}
+			</div>
+			{% ifnotequal overview.status ' ' %}
+			<div class="col">
+				RESULT : &nbsp;{{ overview.status }}
+			</div>
+			{% endifnotequal %}
+		</div>
+		{% for result in results %}
+		<div class="card-body">
+			<div class="row mb-1 text-center">
+				<div class="col"><span class="text-muted">{{ result.subject_code }}</span>&nbsp;&nbsp;
+					{{ result.subject_name }}
+				</div>
+			</div>
+			<hr class="mt-0 mb-0">
+			<div class="row mb-1 text-center">
+				<div class="col column">
+					<small class="text-muted">Letter Grade</small><br/>
+					{{ result.letter_grade }}
+				</div>
+				<div class="col column3">
+					<small class="text-muted">Points</small><br/>
+					{{ result.points }}
+				</div>
+			</div>
+
+			<hr class="mt-0 mb-0">
+
+			<div class="row mb-1 text-center">
+
+				<div class="col column2">
+					<small class="text-muted">Credits</small><br/>
+					{{ result.credit }}
+				</div>
+				<div class="col column3">
+					<small class="text-muted">Credit Point</small><br/>
+					{{ result.credit_points }}
+				</div>
+
+			</div>
+
+
+		</div>
+		{% endfor %}
+
+
+		<div class="card-body">
+
+			<div class="row mb-1 text-center">
+
+				<div class="col column">
+					<small class="text-muted">SGPA</small><br/>
+					{{ overview.cgpa }}
+				</div>
+				<div class="col column3">
+					<small class="text-muted">Total Points</small><br/>
+					{{ total_credit_points }}
+				</div>
+
+			</div>
+			<hr class="mt-0 mb-0">
+
+			<div class="row mb-1 text-center">
+				<div class="col">
+					<small class="text-muted">Credits</small><br/>
+					{{ total_credits }}
+				</div>
+
+			</div>
+
+		</div>
+		<div class="row mb-2 text-center" style="height:40px; justify-content: center;align-content: center;color: white;">
+			<div class="col">
+				<a href="{% url 'wbut:downloadPdf' details.roll_no overview.semester %}">
+                            <button class="btn btn-success"style="width:100%">Download Result</button>
+                        </a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+	

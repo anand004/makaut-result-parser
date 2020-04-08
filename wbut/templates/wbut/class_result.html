@@ -1,0 +1,32 @@
+{% extends 'wbut/base.html' %}
+{% block extra_head_tags %}
+    <title>Class Result</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+		<div class="table-responsive">
+		<table class="table table-hover">
+			<tr class="bg-dark text-center">
+				<th colspan="6" style="color:white;">CLASS RESULT</td>
+			</tr>
+			<tr class="bg-primary text-center">
+				<th colspan="6" style="color:white;">SEMESTER : {{ semester }}</th>
+			</tr>
+			<tr>
+				<td>Name</td>
+                <td>Roll No</td>
+				<td>SGPA</td>
+			</tr>
+			{% for result in results %}
+			<tr>
+                <td><a href="{% url 'wbut:viewResult' result.basicDetails_id semester %}">{{ result.basicDetails.name }}</a></td>
+				<td>{{ result.basicDetails_id }}</td>
+				<td>{{ result.cgpa }}</td>
+
+			</tr>
+			{% endfor %}
+
+		</table>
+			</div>
+	</div>
+	{% endblock %}

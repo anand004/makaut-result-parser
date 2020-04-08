@@ -1,0 +1,117 @@
+{% extends 'wbut/base.html' %}
+{% block extra_head_tags %}
+    <title>Results</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+		<div class="col-3 font-weight-bold">NAME</div>
+		<div class="col-9">:&nbsp;&nbsp;{{ details.name }}</div>
+	</div>
+	<div class="row">
+		<div class="col-3 font-weight-bold">Roll No</div>
+		<div class="col-9">:&nbsp;&nbsp;{{ details.roll_no }}</div>
+	</div>
+	<div class="row">
+			<div class="col-3 font-weight-bold">College</div>
+		<div class="col-9">:&nbsp;&nbsp;{{ details.college }}</div>
+	</div>
+
+    <div class="d-none d-sm-block">
+        <div class="row">
+
+            <div class="col-md-9 table-responsive">
+                {% for result,semester in results %}
+
+                <table class="table table-hover">
+                    <tr class="bg-dark">
+                        <th colspan="5" style="color:white;">{{ semester }}
+                        </th>
+                    </tr>
+
+
+                    <tr>
+                        <td>Semester</td>
+                        <td>SGPA</td>
+                        <td>YGPA</td>
+                        <td>View Result</td>
+                        <td>Class Result</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ result.semester }}</td>
+                        <td>{{ result.cgpa }}</td>
+                        <td>{{ result.ygpa }}</td>
+                        <td><a href="{% url 'wbut:viewResult' details.roll_no result.semester %}">
+                            <button class="btn btn-primary">View Result</button>
+                        </a></td>
+                        <td><a href="{% url 'wbut:viewClassResult' details.roll_no result.semester %}">
+                            <button class="btn btn-success">Class Result</button>
+                        </a></td>
+                    </tr>
+
+                </table>
+
+                {% endfor %}
+
+            </div>
+            <div class="col-md-3 table-responsive">
+                <table class="table table-hover">
+                    <tr class="bg-dark">
+                        <td style="color:white;">ANNOUNCEMENT</td>
+                    </tr>
+                    <tr>
+                        <td><a href="">7th Semester Results Announced</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="d-block d-sm-none">
+        {% for result,semester in results2 %}
+        <div class="card-body">
+            <div class="row mb-2 bg-dark text-center"
+                 style="height:40px; justify-content: center;align-content: center;color: white;">
+                <div class="col"> {{ semester }}</div>
+            </div>
+            <hr class="mt-0 mb-0">
+            <div class="row mb-1 text-center">
+
+                <div class="col column">
+                    <small class="text-muted">Semester</small><br/>
+                    {{ result.semester }}
+                </div>
+                <div class="col column">
+                    <small class="text-muted">SGPA</small><br/>
+                    {{ result.cgpa }}
+                </div>
+                <div class="col column3">
+                    <small class="text-muted">YGPA</small><br/>
+                    {{ result.ygpa }}
+                </div>
+            </div>
+            <hr class="mt-0 mb-0">
+            <div class="row mb-1 text-center">
+
+                <div class="col column2">
+                    <small class="text-muted">View Result</small><br/>
+                    <a href="{% url 'wbut:viewResult' details.roll_no result.semester %}">
+                        <button class="btn btn-primary">View Result</button>
+                    </a>
+                </div>
+                <div class="col column3">
+                    <small class="text-muted">Class Result</small><br/>
+                    <a href="{% url 'wbut:viewClassResult' details.roll_no result.semester %}">
+                        <button class="btn btn-success">Class Result</button>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

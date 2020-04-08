@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'wbut/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    Result Not Found</h2>
+                <div class="error-details">
+                    1) Either the Entered Roll Number is invalid.
+
+                </div>
+                <div class="error-details">
+                    or
+                </div>
+                <div class="error-details">
+                    2) Result Not Announced Yet.
+                </div>
+
+                <div class="error-actions">
+                    <a href="{% url 'wbut:home' %}" class="btn btn-primary btn-lg"><span
+                            class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
